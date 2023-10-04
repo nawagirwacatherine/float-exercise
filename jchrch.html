@@ -17,6 +17,30 @@
             justify-content:center;
             background:linear-gradient(45deg,rgb(116, 116, 21) 50%, #9d4646 50%);
         }
+        .container{
+            height: 450px;
+            width: 330px;
+            background: #b2a5a5;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0,0.5);
+            padding: 100px;
+            overflow-y: auto;
+        }
+
+        #input{
+            height: 500px;
+            width: 100%;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            background: #666;
+            color: #fff;
+            padding: 0 10px;
+            margin: 15px 0;
+        }
+        #input::placeholder{
+            color:#bbb;
+        }
     </style>
 
     <script scr="jquery.js" charset="UTF-8"></script>
@@ -26,7 +50,20 @@
 </head>
 <body>
  <div class="container">
-    <input type="text" id="input" placeholder="press enter to add tasks">
- </div>   
+    <input type="text" id="input" placeholder="click enter to add tasks">
+    <ul></ul>
+ </div>
+ 
+ <script type="text/javascript">
+    $(document).ready(function(){
+        $('#input').change(function(){
+            var input =$(this).val();
+            $('ul').append('<li>'+ input + '</li>');
+
+        });
+    });
+
+
+ </script>
 </body>
 </html>
